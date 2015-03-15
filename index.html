@@ -1,50 +1,65 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Pushdown : push down demo_1">
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body class="container">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+        <div class="bannerWrapper">
+            <!-- <a href="http://www.coach.com" target="_blank" class="ad_link"></a> -->
+                <div class="bgImg">
+                    <img id="img_collaps" src="img/coach_sky_collaps.png" alt="Coach Background">
+                    <img id="img_expand" src="img/coach_sky.png" alt="">
+                </div>
+            <div class="logo">
+                <img src="img/logo.png" alt="Coach Logo">
+            </div>
+            <button type="button" class="btn btn_ex">Expand</button>
+            <button class="btn btn_co">Collaps</button>
+                
+            <div class="expandContent">
+                <div class="carousel">
+                    <button class="btn arrow left" type="button"><img class="" src="img/arrow.png" alt="Left arrow"></button> 
+                    <div class="imageContainer clearfix">
+                        <a href="http://www.coach.com/coach-designer-handbags-coach-swagger-carryall-in-colorblock-leather/34420.html?cgid=women-handbags-new-%20arrivals&dwvar_color=QBDOW" target="_blank"><img class="carouselSlide pic_1 PD_active" data-slide="0" src="img/bag_1.png" alt="COACH swagger carryall in colorblock leather"></a>
 
-    <title>Pushdown</title>
-  </head>
+                        <a href="http://www.coach.com/coach-designer-handbags-coach-swagger-carryall-in-pebble-leather/35796.html?%20dwvar_color=WRPRW&cgid=women-handbags-new-arrivals" target="_blank"><img class="carouselSlide pic_2" data-slide="1" src="img/bag_2.png" alt="COACH swagger carryall"></a>
 
-  <body>
+                        <a href="http://www.coach.com/coach-designer-handbags-prairie-satchel-in-whiplash-leather/34339.html?cgid=women-handbags-new-%20arrivals&dwvar_color=LIBLK" target="_blank"></a><img class="carouselSlide pic_3" data-slide="2" src="img/bag_3.png" alt="PRAIRIE satchel">
+                    </div>
+                    <button class="btn arrow right" type="button"><img class="" src="img/arrow.png" alt="Right arrow"></button> 
+                </div>
+                <div class="PD_video">
+                   <iframe width="560" height="315" src="https://www.youtube.com/embed/ZiorYdIwH3M" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/tiger-ll/pushDown">View on GitHub</a>
+        <div class="content">
+            <h1>Commodo Aenean</h1>
+            <p>Maecenas faucibus mollis interdum. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-          <h1 id="project_title">Pushdown</h1>
-          <h2 id="project_tagline">push down demo_1</h2>
+            Cras mattis consectetur purus sit amet fermentum. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Curabitur blandit tempus porttitor.</p>
+        </div>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/tiger-ll/pushDown/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/tiger-ll/pushDown/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a id="push-down-demo--1-" class="anchor" href="#push-down-demo--1-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Push Down Demo -1-</h3>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Pushdown maintained by <a href="https://github.com/tiger-ll">tiger-ll</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+    </body>
 </html>
