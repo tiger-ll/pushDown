@@ -45,7 +45,7 @@ $(".btn_ex").on('click', expand);
 var PD_cookie = getCookie("firstVisit");
 console.log(PD_cookie);
 
-if (PD_cookie != true){
+if (!PD_cookie){
 	setCookie("firstVisit", true, 10);
 	console.log("cookie set");
 	PD_cookie = getCookie("firstVisit");
