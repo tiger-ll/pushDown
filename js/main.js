@@ -118,9 +118,9 @@ if (!PD_cookie){
       //    after the API code downloads.
       var player;
       function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '390',
-          width: '640',
+        player = new YT.Player('PD_player', {
+          height: '315',
+          width: '500',
           videoId: 'ZiorYdIwH3M?',
           playerVars: { 'autoplay': 1, 'controls': 0 },
           events: {
