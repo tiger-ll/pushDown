@@ -170,7 +170,7 @@ textarea {
 
 .PD_video{
     float: right;
-    width: 60%;
+    width: 55%;
 }
 .imageContainer{
     width: 70%;
@@ -183,7 +183,13 @@ textarea {
 .pic_2, .pic_3{
     display: none;
 }
-
+/*CTA*/
+.btn.CTA{
+    background: white;
+    padding: .5em 1.5em;
+    font-size: 1em;
+    color: #2f3759;
+}
 
 
 /*Hover test*/
