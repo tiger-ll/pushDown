@@ -2,7 +2,6 @@
 $(window).load(function(){
 
 // judgement process
-var autoRun = false;
 var isExpand = false;
 
 var expand = function(){
@@ -50,7 +49,6 @@ if (!PD_cookie){
 	console.log("cookie set");
 	PD_cookie = getCookie("firstVisit");
 	console.log(PD_cookie);
-	autoRun = true;
 	$(".btn_ex")[0].click();
 };
 
