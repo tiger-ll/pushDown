@@ -5,11 +5,6 @@ $(window).load(function(){
 var autoRun = false;
 var isExpand = false;
 
-function expiresDay(exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    return "expires="+d.toUTCString();
-};
 var expand = function(){
 		isExpand = !isExpand;
 		showExpand();
@@ -27,16 +22,34 @@ var expand = function(){
 		;
 };
 
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+    return "";
+}
 
 $(".btn_ex").on('click', expand);
 
-var PD_cookie = document.cookie;
+var PD_cookie = getCookie("firstVisit");
 console.log(PD_cookie);
 
-if ( PD_cookie != "yes"  ){
-	PD_cookie = "firstVisit=yes;" + expiresDay(2);
+if (PD_cookie != true){
+	setCookie("firstVisit", true, 10);
 	console.log("cookie set");
-	console.log(document.cookie);
+	PD_cookie = getCookie("firstVisit");
+	console.log(PD_cookie);
 	autoRun = true;
 	$(".btn_ex")[0].click();
 };
