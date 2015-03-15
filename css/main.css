@@ -185,8 +185,31 @@ textarea {
 }
 
 
+/*===============================
+Youtube API
+=================================*/
 
 
+
+/*import APT*/
+var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('PD_player', {
+          height: '390',
+          width: '640',
+          videoId: 'ZiorYdIwH3M',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
 /*Hover test*/
 
 
