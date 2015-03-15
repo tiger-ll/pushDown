@@ -168,10 +168,8 @@ textarea {
     -ms-filter: "FlipH";
 }
 
-.PD_video{
-    float: right;
-    width: 55%;
-}
+
+
 .imageContainer{
     width: 70%;
     float: left;
@@ -183,12 +181,25 @@ textarea {
 .pic_2, .pic_3{
     display: none;
 }
+
+/*youtube*/
+.PD_video{
+
+    float: right;
+    width: 55%;
+}
+#PD_player{
+    display: block;
+    margin: 0 auto;
+    border:solid 2px black;
+}
 /*CTA*/
 .btn.CTA{
     background: white;
     padding: .5em 2.5em;
     font-size: 1em;
     color: #2f3759;
+    display: block;
     margin: 1em auto;
 }
 
