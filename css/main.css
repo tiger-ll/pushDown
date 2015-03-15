@@ -191,7 +191,8 @@ textarea {
 #PD_player{
     display: block;
     margin: 0 auto;
-    border:solid 2px black;
+    border:solid 3px black;
+    border-radius: 15px;
 }
 /*CTA*/
 .btn.CTA{
