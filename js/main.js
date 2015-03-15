@@ -1,10 +1,16 @@
-$(document).ready(function(){
+
+$(window).load(function(){
 
 // judgement process
+var autoRun = false;
+var isExpand = false;
 
-	var isExpand = false;
-
-	$(".bannerWrapper .btn_ex").click(function(){
+function expiresDay(exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    return "expires="+d.toUTCString();
+};
+var expand = function(){
 		isExpand = !isExpand;
 		showExpand();
 		showCollaps();
@@ -19,7 +25,21 @@ $(document).ready(function(){
 			.css("top","1em").css("color","#fff");
 		}
 		;
-	});
+};
+
+
+$(".btn_ex").on('click', expand);
+
+var PD_cookie = document.cookie;
+console.log(PD_cookie);
+
+if ( PD_cookie != "yes"  ){
+	PD_cookie = "firstVisit=yes;" + expiresDay(2);
+	console.log("cookie set");
+	console.log(document.cookie);
+	autoRun = true;
+	$(".btn_ex")[0].click();
+};
 
 // Expand function
 
@@ -74,47 +94,5 @@ $(document).ready(function(){
 		
 	});
 
-// 	===============================
-// Youtube API
-// =================================
 
-
-
-// import APT
-var tag = document.createElement('script');
-
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('#PD_player', {
-          height: '390',
-          width: '640',
-          videoId: 'ZiorYdIwH3M',
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
-// 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
-
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      var done = false;
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
-        }
-      }
-      function stopVideo() {
-        player.stopVideo();
-      }
 });
