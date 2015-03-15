@@ -192,7 +192,7 @@ textarea {
     display: block;
     margin: 0 auto;
     border:solid 3px black;
-    border-radius: 15px;
+
 }
 /*CTA*/
 .btn.CTA{
@@ -202,6 +202,7 @@ textarea {
     color: #2f3759;
     display: block;
     margin: 1em auto;
+    border-radius: 15px;
 }
 
 
