@@ -103,7 +103,7 @@ if (!PD_cookie){
 	
 
 		
-	});
+
 
 // Youtube API
 
@@ -149,6 +149,8 @@ if (!PD_cookie){
         player.stopVideo();
         player.isMuted();
       }
+	
+});
 
 
 });
