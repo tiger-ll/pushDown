@@ -29,10 +29,7 @@ function showExpand(){
     	player.playVideo();
     	if (autoPlay){
     	player.mute();
-    	setTimeout(function(){
-    		expand()},
-    	    8000);
-    	autoPlay = false;
+    	setTimeout(function(){if (autoPlay) {expand(); autoPlay = false;};}, 8000);
     	}else{
     		player.unMute();
 
@@ -100,9 +97,11 @@ if (!PD_cookie){
 var direction = 1;
 var currentSlide = 0;
 var autoCarousel = true;
-if (isExpand){
-	setTimeout(function(){switchSlide()}, 100);
-};
+// auto switch Carousel function
+var autoSwitch = setInterval(function(){
+	if (autoCarousel) {switchSlide()};}, 2000);
+	
+
 
 function switchSlide(){
 		var locateSlide = $(".imageContainer").find(".PD_active").fadeOut("fast");
