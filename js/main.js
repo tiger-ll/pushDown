@@ -32,6 +32,7 @@ function showExpand(){
     	player.mute();
     	}else{
     		player.unMute();
+    		
     	};
 
         $(".bannerWrapper").css("height","600px");
@@ -54,7 +55,10 @@ function showCollaps(){
 }
 
 
-$(".btn_ex").on('click', expand());
+$(".btn_ex").on('click', function(){
+	expand();
+	autoPlay=false;
+};
 
 //Detect first visit
 function setCookie(cname, cvalue, exdays) {
