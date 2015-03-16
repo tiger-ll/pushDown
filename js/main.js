@@ -6,7 +6,7 @@ var isExpand = false;
 var autoPlay = false;
 // Expand function
 
-$(".btn_ex").on('click', expand);
+$(".btn_ex").on('click', expand());
 
 var expand = function(){
 		isExpand = !isExpand;
@@ -27,7 +27,7 @@ var expand = function(){
 
 function showExpand(){		
     if (isExpand) {
-    	
+
     	player.playVideo();
     	if (autoPlay){
     	player.mute();
