@@ -30,6 +30,7 @@ function showExpand(){
     	player.playVideo();
     	if (autoPlay){
     	player.mute();
+    	setTimeout(expand, 8000);
     	}else{
     		player.unMute();
     	};
@@ -54,7 +55,10 @@ function showCollaps(){
 }
 
 
-$(".btn_ex").on('click', expand);
+$(".btn_ex").on('click', function(){
+	expand;
+	autoPlay = false;
+});
 
 //Detect first visit
 function setCookie(cname, cvalue, exdays) {
@@ -84,7 +88,7 @@ if (!PD_cookie){
 	PD_cookie = getCookie("firstVisit");
 	console.log(PD_cookie);
 	autoPlay = true;
-	$(".btn_ex")[0].click();
+	expand;
 };
 
 
