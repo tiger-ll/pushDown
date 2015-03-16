@@ -26,11 +26,12 @@ function expand(){
 
 function showExpand(){		
     if (isExpand) {
-
     	player.playVideo();
     	if (autoPlay){
     	player.mute();
-    	setTimeout(function(){expand();},8000);
+    	setTimeout(function(){
+    		expand()},
+    	    8000);
     	autoPlay = false;
     	}else{
     		player.unMute();
@@ -60,6 +61,7 @@ function showCollaps(){
 $(".btn_ex").click(function(){
 	expand();
 	autoPlay=false;
+	// clearTimeout();
 });
 
 //Detect first visit
@@ -95,10 +97,30 @@ if (!PD_cookie){
 
 
 // Carousel function
+var direction = 1;
+var currentSlide = 0;
+var autoCarousel = true;
+if (isExpand){
+	setTimeout(function(){switchSlide()}, 100);
+};
+
+function switchSlide(){
+		var locateSlide = $(".imageContainer").find(".PD_active").fadeOut("fast");
+		console.log(locateSlide);
+		currentSlide = locateSlide.data("slide");
+		// switch slide
+		
+		locateSlide.removeClass("PD_active");
+		var nextSlide = currentSlide + direction;
+		if (nextSlide < 0) {
+			nextSlide = 2;
+		};
+		console.log(currentSlide, direction);
+		$(".imageContainer").find('[data-slide="' + nextSlide % 3 + '"]').addClass("PD_active").delay(200).fadeIn(500);
+}
 	$(".arrow").click(function(){
 		// define default slide var
-		var direction = 0;
-		var currentSlide = 1;
+		autoCarousel = false;
 		// var nextSlice = currentSlice + direction;
 		console.log(direction, currentSlide);
 		// locate current slide
@@ -109,26 +131,7 @@ if (!PD_cookie){
 			direction = -1;
 		};
 
-		var locateSlide = $(".imageContainer").find(".PD_active").fadeOut("fast");
-		console.log(locateSlide);
-		currentSlide = locateSlide.data("slide");
-		// switch slide
-		
-				locateSlide.removeClass("PD_active");
-				var nextSlide = currentSlide + direction;
-				if (nextSlide < 0) {
-					nextSlide = 2;
-				};
-				console.log(currentSlide, direction);
-				$(".imageContainer").find('[data-slide="' + nextSlide % 3 + '"]').addClass("PD_active").delay(200).fadeIn(500);
+		switchSlide();
 	
-
-		
-
-
-
-	
-});
-
-
+	});
 });
