@@ -14,7 +14,7 @@ var expand = function(){
 		
 		if(isExpand){
 			$(".btn_ex").text("Collaps")
-			.css("top",".5em").css("color","#272822");
+			.css("top",".5em").css("color","#272822")
 			// $(".btn_ex").css();
 		}
 		else{
@@ -30,7 +30,6 @@ function showExpand(){
     	player.playVideo();
     	if (autoPlay){
     	player.mute();
-    	setTimeout(expand, 8000);
     	}else{
     		player.unMute();
     	};
@@ -55,12 +54,7 @@ function showCollaps(){
 }
 
 
-$(".btn_ex").on('click', expand
-// {
-// 	expand;
-// 	autoPlay = false;
-// }
-);
+$(".btn_ex").on('click', expand);
 
 //Detect first visit
 function setCookie(cname, cvalue, exdays) {
@@ -84,7 +78,7 @@ function getCookie(cname) {
 var PD_cookie = getCookie("firstVisit");
 console.log(PD_cookie);
 
-if (PD_cookie != true){
+if (!PD_cookie){
 	setCookie("firstVisit", true, 10);
 	console.log("cookie set");
 	PD_cookie = getCookie("firstVisit");
