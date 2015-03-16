@@ -7,7 +7,7 @@ var autoPlay = false;
 // Expand function
 
 
-var expand = function(){
+function expand(){
 		isExpand = !isExpand;
 		showExpand();
 		showCollaps();
@@ -54,7 +54,7 @@ function showCollaps(){
 }
 
 
-$(".btn_ex").on('click', expand);
+$(".btn_ex").on('click', expand());
 
 //Detect first visit
 function setCookie(cname, cvalue, exdays) {
