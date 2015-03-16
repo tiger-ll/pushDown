@@ -30,9 +30,11 @@ function showExpand(){
     	player.playVideo();
     	if (autoPlay){
     	player.mute();
+    	setTimeout(function(){expand();},8000);
+    	autoPlay = false;
     	}else{
     		player.unMute();
-    		
+
     	};
 
         $(".bannerWrapper").css("height","600px");
@@ -55,10 +57,10 @@ function showCollaps(){
 }
 
 
-$(".btn_ex").on('click', function(){
+$(".btn_ex").click(function(){
 	expand();
 	autoPlay=false;
-};
+});
 
 //Detect first visit
 function setCookie(cname, cvalue, exdays) {
