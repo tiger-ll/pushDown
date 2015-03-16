@@ -39,7 +39,6 @@
           height: '315',
           width: '500',
           videoId: 'ZiorYdIwH3M?',
-          playerVars: { 'autoplay': 1, 'controls': 0 },
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
