@@ -14,7 +14,7 @@ var expand = function(){
 		
 		if(isExpand){
 			$(".btn_ex").text("Collaps")
-			.css("top",".5em").css("color","#272822")
+			.css("top",".5em").css("color","#272822");
 			// $(".btn_ex").css();
 		}
 		else{
@@ -55,10 +55,12 @@ function showCollaps(){
 }
 
 
-$(".btn_ex").on('click', function(){
-	expand;
-	autoPlay = false;
-});
+$(".btn_ex").on('click', expand
+// {
+// 	expand;
+// 	autoPlay = false;
+// }
+);
 
 //Detect first visit
 function setCookie(cname, cvalue, exdays) {
@@ -82,7 +84,7 @@ function getCookie(cname) {
 var PD_cookie = getCookie("firstVisit");
 console.log(PD_cookie);
 
-if (!PD_cookie){
+if (PD_cookie != true){
 	setCookie("firstVisit", true, 10);
 	console.log("cookie set");
 	PD_cookie = getCookie("firstVisit");
