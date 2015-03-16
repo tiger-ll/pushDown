@@ -38,7 +38,7 @@
         player = new YT.Player('PD_player', {
           height: '315',
           width: '500',
-          videoId: 'ZiorYdIwH3M?',
+          videoId: 'ZiorYdIwH3M',
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
