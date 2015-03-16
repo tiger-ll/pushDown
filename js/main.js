@@ -3,6 +3,10 @@ $(window).load(function(){
 
 // judgement process
 var isExpand = false;
+var autoPlay = false;
+// Expand function
+
+$(".btn_ex").on('click', expand);
 
 var expand = function(){
 		isExpand = !isExpand;
@@ -17,10 +21,42 @@ var expand = function(){
 		else{
 			$(".btn_ex").text("Expand")
 			.css("top","1em").css("color","#fff");
-		}
-		;
+		};
 };
 
+
+function showExpand(){		
+    if (isExpand) {
+    	
+    	player.playVideo();
+    	if (autoPlay){
+    	player.mute();
+    	}else{
+    		player.unMute();
+    	};
+
+        $(".bannerWrapper").css("height","600px");
+       	$(".logo img").css("width","30%");
+       	$("#img_collaps").fadeOut(1000);
+       	$("#img_expand").fadeIn(1000);
+       	$(".expandContent").fadeIn(1000);
+	};
+}
+
+function showCollaps(){
+	if (!isExpand) {
+		player.stopVideo();
+		$(".bannerWrapper").css("height","90px");
+		$(".logo img").css("width","20%");
+		$("#img_collaps").fadeIn(500);
+		$("#img_expand").fadeOut(800);
+		$(".expandContent").fadeOut(300);
+	};
+}
+
+
+
+//Detect first visit
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -39,8 +75,6 @@ function getCookie(cname) {
     return "";
 }
 
-$(".btn_ex").on('click', expand);
-
 var PD_cookie = getCookie("firstVisit");
 console.log(PD_cookie);
 
@@ -49,30 +83,11 @@ if (!PD_cookie){
 	console.log("cookie set");
 	PD_cookie = getCookie("firstVisit");
 	console.log(PD_cookie);
+	autoPlay = true;
 	$(".btn_ex")[0].click();
 };
 
-// Expand function
 
-	function showExpand(){		
-    	if (isExpand) {
-    	    $(".bannerWrapper").css("height","600px");
-        	$(".logo img").css("width","30%");
-        	$("#img_collaps").fadeOut(1000);
-        	$("#img_expand").fadeIn(1000);
-        	$(".expandContent").fadeIn(1000);
-		};
-	};
-
-	function showCollaps(){
-		if (!isExpand) {
-			$(".bannerWrapper").css("height","90px");
-			$(".logo img").css("width","20%");
-			$("#img_collaps").fadeIn(500);
-			$("#img_expand").fadeOut(800);
-			$(".expandContent").fadeOut(300);
-		};
-	}
 // Carousel function
 	$(".arrow").click(function(){
 		// define default slide var
