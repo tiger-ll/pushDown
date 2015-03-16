@@ -84,7 +84,7 @@ if (!PD_cookie){
 	PD_cookie = getCookie("firstVisit");
 	console.log(PD_cookie);
 	autoPlay = true;
-	expand;
+	expand();
 };
 
 
