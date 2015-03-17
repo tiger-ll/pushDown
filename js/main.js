@@ -83,7 +83,7 @@ function getCookie(cname) {
 }
 
 var PD_cookie = getCookie("firstVisit");
-
+	console.log(PD_cookie);
 
 if (!PD_cookie){
 	setCookie("firstVisit", true, 10);
