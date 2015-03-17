@@ -123,6 +123,7 @@ function switchSlide(){
 	$(".arrow").click(function(){
 		// define default slide var
 		autoCarousel = false;
+		autoPlay = false;
 		// locate current slide
 		if($(this).hasClass("right")){
 			direction = 1;
@@ -135,7 +136,7 @@ function switchSlide(){
 	
 	});
 // youtube
-$("#PD_player").click(function(){
-	window.open("https://www.youtube.com/watch?v=ZiorYdIwH3M");
+$("#PD_player_a").click(function(){
+	player.stopVideo();
 });
 });

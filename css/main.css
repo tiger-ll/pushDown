@@ -186,10 +186,18 @@ textarea {
 
 /*youtube*/
 .PD_video{
-
+    position: relative;
     float: right;
     width: 55%;
 }
+#PD_player_a{
+    display: block;
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    top:0;
+}
+
 #PD_player{
     display: block;
     margin: 0 auto;
