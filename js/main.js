@@ -1,5 +1,5 @@
 
-$(window).load(function(){
+$(document).ready(function(){
 
 // judgement process
 var isExpand = false;
@@ -49,7 +49,7 @@ var autoPlay = false;
         player.stopVideo();
         player.isMuted();
       }
-      
+
 // Expand function
 
 
