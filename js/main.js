@@ -27,9 +27,9 @@ function expand(){
 
 function showExpand(){		
     if (isExpand) {
-    	// player.playVideo();
+    	player.playVideo();
     	if (autoPlay){
-    	// player.mute();
+    	player.mute();
     	setTimeout(function(){if (autoPlay) {expand(); autoPlay = false;};}, 8000);
     	}else{
     		player.unMute();
@@ -91,7 +91,7 @@ if (!PD_cookie){
 	PD_cookie = getCookie("firstVisit");
 	console.log(PD_cookie);
 	autoPlay = true;
-	expand();
+	setTimeout(expand(),3000);
 };
 
 
@@ -107,7 +107,7 @@ var autoSwitch = setInterval(function(){
 
 function switchSlide(){
 		var locateSlide = $(".imageContainer").find(".PD_active").fadeOut("fast");
-		console.log(locateSlide);
+
 		currentSlide = locateSlide.data("slide");
 		// switch slide
 		
@@ -116,14 +116,12 @@ function switchSlide(){
 		if (nextSlide < 0) {
 			nextSlide = 2;
 		};
-		console.log(currentSlide, direction);
+
 		$(".imageContainer").find('[data-slide="' + nextSlide % 3 + '"]').addClass("PD_active").delay(200).fadeIn(500);
 }
 	$(".arrow").click(function(){
 		// define default slide var
 		autoCarousel = false;
-		// var nextSlice = currentSlice + direction;
-		console.log(direction, currentSlide);
 		// locate current slide
 		if($(this).hasClass("right")){
 			direction = 1;
