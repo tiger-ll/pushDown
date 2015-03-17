@@ -134,4 +134,8 @@ function switchSlide(){
 		switchSlide();
 	
 	});
+// youtube
+$("#PD_player").click(function(){
+	window.open("https://www.youtube.com/watch?v=ZiorYdIwH3M");
+});
 });
