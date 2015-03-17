@@ -1,5 +1,5 @@
 
-$(document).ready(function(){
+$(window).load(function(){
 
 // judgement process
 var isExpand = false;
