@@ -106,7 +106,7 @@ var autoSwitch = setInterval(function(){
 
 
 function switchSlide(){
-		var locateSlide = $(".imageContainer").find(".PD_active").fadeOut("fast");
+		var locateSlide = $(".imageContainer").find(".PD_active").fadeOut("fast").removeClass(".PD_active");
 
 		// switch slide
 		
