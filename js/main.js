@@ -26,8 +26,9 @@ function expand(){
 
 
 function showExpand(){		
+	player.playVideo();
     if (isExpand) {
-    	player.playVideo();
+    	
     	if (autoPlay){
     	player.mute();
     	setTimeout(function(){if (autoPlay) {expand(); autoPlay = false;};}, 8000);
