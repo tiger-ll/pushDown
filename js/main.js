@@ -1,5 +1,5 @@
 
-$(window).load(function(){
+$(document).ready(function(){
 
 // judgement process
 var isExpand = false;
@@ -81,7 +81,7 @@ function getCookie(cname) {
 }
 
 var PD_cookie = getCookie("firstVisit");
-console.log(PD_cookie);
+
 
 if (!PD_cookie){
 	setCookie("firstVisit", true, 10);
@@ -105,8 +105,7 @@ var autoSwitch = setInterval(function(){
 
 function switchSlide(){
 		var locateSlide = $(".imageContainer").find(".PD_active").fadeOut("fast");
-		console.log(locateSlide);
-		currentSlide = locateSlide.data("slide");
+
 		// switch slide
 		
 		locateSlide.removeClass("PD_active");
@@ -114,14 +113,12 @@ function switchSlide(){
 		if (nextSlide < 0) {
 			nextSlide = 2;
 		};
-		console.log(currentSlide, direction);
 		$(".imageContainer").find('[data-slide="' + nextSlide % 3 + '"]').addClass("PD_active").delay(200).fadeIn(500);
 }
 	$(".arrow").click(function(){
 		// define default slide var
 		autoCarousel = false;
-		// var nextSlice = currentSlice + direction;
-		console.log(direction, currentSlide);
+
 		// locate current slide
 		if($(this).hasClass("right")){
 			direction = 1;
