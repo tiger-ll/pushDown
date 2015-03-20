@@ -1,5 +1,7 @@
 /*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
-
+a:-webkit-any-link{
+ text-decoration: none;
+}
 html {
     color: #222;
     font-size: 1em;
@@ -168,10 +170,8 @@ textarea {
     -ms-filter: "FlipH";
 }
 
-.PD_video{
-    float: left;
-    width: 60%;
-}
+
+
 .imageContainer{
     width: 70%;
     float: left;
@@ -184,9 +184,59 @@ textarea {
     display: none;
 }
 
+/*youtube*/
+.PD_video{
+    position: relative;
+    float: right;
+    width: 55%;
+}
+#PD_player_a{
+    display: block;
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    top:0;
+}
 
+#PD_player{
+    display: block;
+    margin: 0 auto;
+    border:solid 3px black;
 
+}
 
+/*CTA*/
+.btn.CTA{
+    border:solid 3px white;
+    background: white;
+    padding: .5em 2.5em;
+    font-size: 1em;
+    color: #2f3759;;
+    display: block;
+    margin: 1em auto;
+    border-radius: 10px;
+    text-decoration: none;
+    -webkit-transition:all .3s ease-out;
+    -moz-transition:all .3s ease-out;
+    -o-transition:all .3s ease-out;
+    transition:all .3s ease-out;
+
+}
+.btn.CTA a:hover{
+    color: white;
+}
+.btn.CTA:hover{
+    color: white;
+    background: transparent;
+}
+
+.btn.twitterBtn{   
+    position: absolute;
+    right: 2em;
+}
+.btn.twitterBtn img{
+    width: 30px;
+}
 /*Hover test*/
 
 
